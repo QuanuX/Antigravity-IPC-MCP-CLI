@@ -1,0 +1,70 @@
+{
+  "name": "symphony",
+  "displayName": "Symphony",
+  "version": "0.2.0-alpha.1",
+  "description": "Native C++26 MCP and Unix-socket IPC bridge, VGAA architectural rules, and operational skills for inspecting and administering a configured QuanuX Symphony installation through qxctl in Antigravity and Antigravity CLI.",
+  "logo": "assets/favicon.svg",
+  "suggestedPrompts": [
+    "Use Symphony to inspect the connected installation, verify the pinned qxctl and registry digests, and summarize the available command families.",
+    "Use Symphony to run a read-only qxctl status or knowledge invariant command and explain the returned evidence without mutating state.",
+    "Prepare a Symphony non-read operation preview, review its exact argv, direct-file SHA-256 pins, authority mode, and recovery command, and wait for approval before apply."
+  ],
+  "author": {
+    "name": "QuanuX",
+    "email": "duncan@quanux.org",
+    "url": "https://quanux.org"
+  },
+  "homepage": "https://docs.quanux.org",
+  "repository": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "symphony",
+    "quanux",
+    "qxctl",
+    "mcp",
+    "ipc",
+    "antigravity",
+    "antigravity-cli",
+    "agy",
+    "vgaa",
+    "quantos",
+    "tradeos",
+    "infrastructure",
+    "administration"
+  ],
+  "rules": "./rules/",
+  "skills": "./skills/",
+  "mcpServers": "./mcp_config.json",
+  "userConfig": {
+    "connection_profile": {
+      "title": "Symphony connection profile",
+      "description": "Absolute path to an operator-created mode-0600 connection.json file pinning the local qxctl executable SHA-256 and command-registry digest.",
+      "type": "file",
+      "required": true,
+      "sensitive": false
+    }
+  },
+  "interface": {
+    "displayName": "Symphony",
+    "shortDescription": "Inspect and administer a configured QuanuX Symphony installation via MCP and local Unix-socket IPC",
+    "longDescription": "Connects Antigravity, Antigravity CLI (agy), and MCP-compatible agents to an explicitly configured QuanuX Symphony installation through qxctl's machine-readable command registry. Provides 698 individually exposed public MCP tools (or 6 live-registry discovery tools), direct stdio and same-user Unix-socket IPC transports, digest-pinned execution, and single-use session-bound previews before non-read operations.",
+    "developerName": "QuanuX",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ],
+    "websiteURL": "https://quanux.org",
+    "privacyPolicyURL": "https://quanux.org/privacy",
+    "termsOfServiceURL": "https://quanux.org/symphony-plugin-terms",
+    "defaultPrompt": [
+      "Use Symphony to inspect the connected installation and summarize its available command families.",
+      "Use Symphony to explain a qxctl command contract before running any read-only inspection.",
+      "Prepare a Symphony operation preview and show its authority and recovery details without applying it."
+    ],
+    "brandColor": "#35F2D0",
+    "composerIcon": "./assets/favicon.svg",
+    "logo": "./assets/favicon-dark.svg"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "symphony",
+  "displayName": "Symphony",
+  "version": "0.2.0-alpha.1",
+  "description": "QuanuX Symphony MCP and local IPC bridge, VGAA rules, and skills for Antigravity and Antigravity CLI",
+  "logo": "assets/favicon.svg",
+  "suggestedPrompts": [
+    "Use Symphony to inspect the connected installation, verify the pinned qxctl and registry digests, and summarize the available command families.",
+    "Use Symphony to run a read-only qxctl status or knowledge invariant command and explain the returned evidence without mutating state.",
+    "Prepare a Symphony non-read operation preview, review its exact argv, direct-file SHA-256 pins, authority mode, and recovery command, and wait for approval before apply."
+  ],
+  "author": {
+    "name": "QuanuX",
+    "email": "duncan@quanux.org",
+    "url": "https://quanux.org"
+  },
+  "homepage": "https://docs.quanux.org",
+  "repository": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "symphony",
+    "quanux",
+    "qxctl",
+    "mcp",
+    "ipc",
+    "antigravity",
+    "agy"
+  ]
+}

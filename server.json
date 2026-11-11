@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.QuanuX/symphony",
+  "title": "Symphony",
+  "description": "Inspect and administer a configured QuanuX Symphony installation through its qxctl contracts.",
+  "version": "0.1.0-alpha.1",
+  "repository": {
+    "url": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI#readme",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI/releases/download/v0.1.0-alpha.1/symphony-0.1.0-alpha.1.mcpb",
+      "version": "0.1.0-alpha.1",
+      "fileSha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

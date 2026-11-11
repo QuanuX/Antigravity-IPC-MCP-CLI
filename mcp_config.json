@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "symphony": {
+      "command": "/bin/sh",
+      "args": [
+        "${PLUGIN_ROOT}/packaging/antigravity/launcher.sh",
+        "--config",
+        "${PLUGIN_DATA}/connection.json",
+        "--tool-catalog",
+        "${PLUGIN_ROOT}/catalog/tools.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "symphony": {
+      "command": "/absolute/path/to/bin/symphony-mcp",
+      "args": [
+        "--connect-socket",
+        "/absolute/path/to/private-0700-dir/symphony.sock"
+      ]
+    }
+  }
+}

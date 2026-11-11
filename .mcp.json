@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "symphony": {
+      "type": "stdio",
+      "command": "${CLAUDE_PLUGIN_ROOT}/bin/symphony-mcp",
+      "args": [
+        "--config",
+        "${user_config.connection_profile}",
+        "--tool-catalog",
+        "${CLAUDE_PLUGIN_ROOT}/catalog/tools.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "symphony": {
+      "command": "./bin/symphony-mcp",
+      "args": [
+        "--config",
+        "${user_config.connection_profile}",
+        "--tool-catalog",
+        "./catalog/tools.json"
+      ]
+    }
+  }
+}

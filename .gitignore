@@ -1,0 +1,10 @@
+/build*/
+/bin/
+/dist/
+/connection.json
+__pycache__/
+*.pyc
+.DS_Store
+/evidence/
+/test-results/
+/.venv/

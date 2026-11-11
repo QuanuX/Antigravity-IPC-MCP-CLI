@@ -1,0 +1,73 @@
+{
+  "manifest_version": "0.3",
+  "name": "symphony",
+  "display_name": "Symphony",
+  "version": "0.1.0-alpha.1",
+  "description": "Inspect and administer a configured Symphony installation through its qxctl contracts.",
+  "long_description": "Connects an MCP host to an explicitly configured Symphony installation through qxctl's machine-readable command registry. Discovers command contracts, executes read-only commands directly, and requires single-use session-bound previews before configured non-read commands.",
+  "author": {
+    "name": "QuanuX",
+    "email": "duncan@quanux.org",
+    "url": "https://quanux.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI"
+  },
+  "homepage": "https://docs.quanux.org",
+  "documentation": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI#readme",
+  "support": "https://quanux.org/contact",
+  "privacy_policies": [
+    "https://quanux.org/privacy"
+  ],
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "symphony",
+    "quanux",
+    "qxctl",
+    "mcp",
+    "ipc",
+    "antigravity",
+    "infrastructure"
+  ],
+  "server": {
+    "type": "binary",
+    "entry_point": "launcher.sh",
+    "mcp_config": {
+      "command": "/bin/sh",
+      "args": [
+        "${__dirname}/launcher.sh",
+        "--config",
+        "${user_config.connection_profile}"
+      ]
+    }
+  },
+  "user_config": {
+    "connection_profile": {
+      "type": "file",
+      "title": "Symphony connection profile",
+      "description": "Absolute path to an operator-created mode-0600 connection.json file.",
+      "required": true,
+      "sensitive": false
+    }
+  },
+  "tools_generated": true,
+  "prompts_generated": false,
+  "prompts": [
+    {
+      "name": "symphony-admin",
+      "description": "Structured workflow for inspecting or administering a configured Symphony installation.",
+      "arguments": [
+        "goal"
+      ],
+      "text": "Inspect symphony_connection first, then use the individually exposed operation tools (or symphony_discover and symphony_describe in live-registry mode) for {{goal}}. Never treat preview as owner authorization or retry unknown non-read outcomes automatically."
+    }
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "linux"
+    ],
+    "runtimes": {}
+  }
+}

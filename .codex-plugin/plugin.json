@@ -1,0 +1,55 @@
+{
+  "name": "symphony",
+  "version": "0.2.0-alpha.1",
+  "description": "QuanuX Symphony MCP and local IPC bridge and operational skills",
+  "author": {
+    "name": "QuanuX",
+    "email": "duncan@quanux.org",
+    "url": "https://quanux.org"
+  },
+  "homepage": "https://docs.quanux.org",
+  "repository": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "symphony",
+    "quanux",
+    "qxctl",
+    "mcp",
+    "ipc",
+    "antigravity"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "userConfig": {
+    "connection_profile": {
+      "title": "Symphony connection profile",
+      "description": "Absolute path to an operator-created mode-0600 connection.json file.",
+      "type": "file",
+      "required": true,
+      "sensitive": false
+    }
+  },
+  "interface": {
+    "displayName": "Symphony",
+    "shortDescription": "Inspect and administer a configured Symphony installation",
+    "longDescription": "Connects agents to an explicitly configured QuanuX Symphony installation through qxctl's machine-readable command registry.",
+    "developerName": "QuanuX",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Interactive"
+    ],
+    "websiteURL": "https://quanux.org",
+    "privacyPolicyURL": "https://quanux.org/privacy",
+    "termsOfServiceURL": "https://quanux.org/symphony-plugin-terms",
+    "defaultPrompt": [
+      "Use Symphony to inspect the connected installation and summarize its available command families.",
+      "Use Symphony to explain a qxctl command contract before running any read-only inspection.",
+      "Prepare a Symphony operation preview and show its authority and recovery details without applying it."
+    ],
+    "brandColor": "#35F2D0",
+    "composerIcon": "./assets/favicon.svg",
+    "logo": "./assets/favicon-dark.svg"
+  }
+}

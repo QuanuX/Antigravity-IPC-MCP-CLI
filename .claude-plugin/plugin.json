@@ -1,0 +1,32 @@
+{
+  "name": "symphony",
+  "version": "0.2.0-alpha.1",
+  "description": "QuanuX Symphony MCP and local IPC bridge and operational skills for Antigravity, Antigravity CLI, and Claude Code",
+  "author": {
+    "name": "QuanuX",
+    "email": "duncan@quanux.org",
+    "url": "https://quanux.org"
+  },
+  "homepage": "https://docs.quanux.org",
+  "repository": "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI",
+  "license": "AGPL-3.0-only",
+  "keywords": [
+    "symphony",
+    "quanux",
+    "qxctl",
+    "mcp",
+    "ipc",
+    "antigravity"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "userConfig": {
+    "connection_profile": {
+      "title": "Symphony connection profile",
+      "description": "Absolute path to an operator-created mode-0600 connection.json file.",
+      "type": "file",
+      "required": true,
+      "sensitive": false
+    }
+  }
+}
