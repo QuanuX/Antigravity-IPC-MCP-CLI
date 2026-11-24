@@ -7,6 +7,8 @@ description: Build symphony-mcp, create a pinned mode-0600 connection.json profi
 
 Configure the native C++26 `symphony-mcp` bridge for **Antigravity 2.0**, **Antigravity IDE**, and **Antigravity CLI (`agy`)** (as well as Gemini CLI, Codex, and Claude Code).
 
+For a released beta.2.1 install, use the [QuanuX Antigravity downloads option](https://quanux.org/downloads#antigravity). The prebuilt installer picks the exact signed qxctl and catalog for the executing cohort, creates the private read-only profile and tests the server. Inspect the resulting connection with `symphony_connection` and a named read tool. The compiler instructions below apply to source builds.
+
 ## 1. Prerequisites
 
 - macOS (`arm64` or `x86_64`) or Linux (`x86_64` or `aarch64`), or Windows 11 launching the Linux bridge inside WSL2.

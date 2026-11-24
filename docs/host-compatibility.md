@@ -8,6 +8,8 @@
 
 Antigravity supports two installation paths for QuanuX Symphony:
 
+For the beta.2.1 release, use the [public installer](https://quanux.org/downloads#antigravity). It writes the native plugin's absolute local command and argument paths to the installed plugin's own `mcp_config.json`. Antigravity loads the three skills, one rule and one MCP server from its standard plugin directories. Developer adapters and source builds are described below.
+
 ### A. Native Antigravity Plugin (`plugin.json` + `mcp_config.json`)
 
 The root [`plugin.json`](../plugin.json) and [`mcp_config.json`](../mcp_config.json) register:

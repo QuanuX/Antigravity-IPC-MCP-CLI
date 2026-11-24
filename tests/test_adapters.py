@@ -95,9 +95,9 @@ class AdapterTests(unittest.TestCase):
         plugin = json.loads((ROOT / "plugin.json").read_text(encoding="utf-8"))
         self.assertEqual(plugin["name"], "symphony")
         self.assertEqual(plugin["displayName"], "Symphony")
-        self.assertEqual(plugin["rules"], "./rules/")
+        self.assertEqual(plugin["$schema"], "https://antigravity.google/schemas/v1/plugin.json")
         self.assertEqual(plugin["skills"], "./skills/")
-        self.assertEqual(plugin["mcpServers"], "./mcp_config.json")
+        self.assertIn("symphony", json.loads((ROOT / "mcp_config.json").read_text())["mcpServers"])
         self.assertTrue((ROOT / "GEMINI.md").is_file())
         self.assertTrue((ROOT / "rules" / "AGENTS.md").is_file())
         for skill_dir in ("symphony-admin", "symphony-setup", "symphony-ipc"):

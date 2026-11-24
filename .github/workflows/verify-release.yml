@@ -1,0 +1,40 @@
+name: Verify published install
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-15, ubuntu-24.04-arm, ubuntu-24.04, ubuntu-26.04]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the signed Symphony release
+        shell: bash
+        run: |
+          set -eu
+          curl -fsSLo "$RUNNER_TEMP/install-symphony.py" https://raw.githubusercontent.com/QuanuX/symphony-distribution/fb076584ef7558e621259f03fbf4bd7a5756f50b/install/install-symphony.py
+          python3 -c 'import hashlib,sys; assert hashlib.file_digest(open(sys.argv[1],"rb"),"sha256").hexdigest()=="e60c33ebf51e6250aefd73f1f66e4293e6d5ad63ff01821823dacbaa733b6d1d"' "$RUNNER_TEMP/install-symphony.py"
+          python3 -I "$RUNNER_TEMP/install-symphony.py"
+      - name: Exercise the exact published installer and profile-specific ZIP
+        shell: bash
+        run: |
+          set -eu
+          version=$(python3 -c 'import json; print(json.load(open("plugin.json"))["version"])')
+          curl -fsSLo "$RUNNER_TEMP/install-antigravity.py" "https://github.com/QuanuX/Antigravity-IPC-MCP-CLI/releases/download/v$version/install-antigravity.py"
+          cmp "$RUNNER_TEMP/install-antigravity.py" scripts/install-antigravity.py
+          python3 -I "$RUNNER_TEMP/install-antigravity.py"
+          python3 -I ci/check_installed_plugin.py "$HOME/.gemini/config/plugins/symphony"
+          python3 -I ci/check_antigravity_host.py
+          python3 -I "$RUNNER_TEMP/install-antigravity.py"

@@ -28,7 +28,7 @@ This repository provides a **thin, caller-class-neutral local adapter** (`sympho
 | Feature | Implementation |
 | :--- | :--- |
 | **Native C++26 MCP Server** | `symphony-mcp` implementing MCP `2025-11-25` over newline-delimited stdio JSON-RPC |
-| **Reviewed Public Tool Catalogue** | [`catalog/tools.json`](catalog/tools.json) exposing **698 tools** (`symphony_connection` + **697** operation-specific tools covering all **493** routable `qxctl` commands: **289** `*_read` tools and **204** `*_preview` / `*_apply` pairs, paginated 50 per page via `nextCursor`) |
+| **Reviewed Public Tool Catalogue** | [`catalog/tools.json`](catalog/tools.json) exposing **744 tools** (`symphony_connection` + **743** operation-specific tools covering all **523** routable `qxctl` commands: **303** `*_read` tools and **220** `*_preview` / `*_apply` pairs, paginated 50 per page via `nextCursor`) |
 | **Live Registry Discovery Mode** | Omit `--tool-catalog` to expose the compact 6-tool live discovery surface (`symphony_connection`, `symphony_catalog`, `symphony_command_schema`, `symphony_read`, `symphony_prepare`, `symphony_apply`) backed by live `qxctl commands list --json` |
 | **Same-User Unix-Socket IPC** | `--listen <socket>` runs a local mode-`0600` Unix-domain socket daemon inside a mode-`0700` non-symlink directory with kernel peer-UID verification (`getpeereid` / `SO_PEERCRED`); `--connect-socket <socket>` connects any stdio MCP host to the running daemon |
 | **Always-On VGAA Rules** | [`rules/AGENTS.md`](rules/AGENTS.md) (Antigravity plugin rule) and [`GEMINI.md`](GEMINI.md) (Antigravity CLI / Gemini CLI context file) |
@@ -37,7 +37,17 @@ This repository provides a **thin, caller-class-neutral local adapter** (`sympho
 
 ---
 
-## Quick Start
+## Install Symphony for Antigravity
+
+Install [Symphony 0.2.0-beta.2.1](https://quanux.org/downloads) on the same machine that runs the local MCP server. Use the **Antigravity** install option on the [QuanuX downloads page](https://quanux.org/downloads#antigravity) to verify and run the Python installer. The [GitHub release](https://github.com/QuanuX/Antigravity-IPC-MCP-CLI/releases/tag/v0.2.0-beta.2.1) carries the installer, checksums and native plugin ZIPs.
+
+The installer requires Python 3.11 or later and curl. It selects the current user's guided Symphony installation and installs the plugin in `~/.gemini/config/plugins/symphony`. It creates a private read-only connection, verifies a real MCP handshake against the selected qxctl, and loads the matching release catalog. Restart your Antigravity session and open `/mcp` to see the connection. The plugin includes three skills and the VGAA rule.
+
+To install for just one project, run `python3 -I install-antigravity.py --workspace /path/to/project`. To select an alternate signed Symphony prefix, add `--qxctl /path/to/qxctl`. The helper preserves an existing plugin or different connection and reports its location. Repeating the install of the same release checks the existing binding.
+
+Supported Symphony cohorts are macOS 15 Apple Silicon, Ubuntu 24.04 AMD64 or ARM64, and Ubuntu 26.04 AMD64. The component reports its own version as `0.2.0-beta.2.1`. Use the instructions below for a source build.
+
+## Build from source
 
 ### 1. Build, Test, and Install `symphony-mcp`
 
@@ -66,7 +76,7 @@ python3 scripts/configure_connection.py \
 
 ### 3. Configure Antigravity, Antigravity CLI (`agy`), or Other Hosts
 
-#### Option A: Direct Stdio Mode (Default — 698 Public Operation Tools)
+#### Option A: Direct Stdio Mode (Default — 744 Public Operation Tools)
 
 Generate the host configuration for your client:
 

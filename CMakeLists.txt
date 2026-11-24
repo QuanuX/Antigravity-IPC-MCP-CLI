@@ -35,8 +35,12 @@ if(NOT APPLE)
   target_link_libraries(symphony_transport PUBLIC OpenSSL::Crypto)
 endif()
 
-add_executable(symphony-mcp
-  src/main.cpp)
+set(plugin_manifest "${CMAKE_CURRENT_SOURCE_DIR}/plugin.json")
+set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${plugin_manifest}")
+file(READ "${plugin_manifest}" plugin_metadata)
+string(JSON plugin_version GET "${plugin_metadata}" version)
+add_executable(symphony-mcp src/main.cpp)
+target_compile_definitions(symphony-mcp PRIVATE SYMPHONY_MCP_VERSION="${plugin_version}")
 target_link_libraries(symphony-mcp PRIVATE symphony_transport)
 install(TARGETS symphony-mcp RUNTIME DESTINATION bin)
 
@@ -74,6 +78,10 @@ if(BUILD_TESTING)
   add_test(
     NAME qualification-report
     COMMAND "${Python3_EXECUTABLE}" -m unittest discover -s "${CMAKE_CURRENT_SOURCE_DIR}/tests" -p "test_qualification.py")
+
+  add_test(
+    NAME public-installer
+    COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_public_installer.py")
 
   add_test(
     NAME mcpb-packaging
