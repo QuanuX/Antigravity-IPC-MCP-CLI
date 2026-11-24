@@ -80,6 +80,10 @@ if(BUILD_TESTING)
     COMMAND "${Python3_EXECUTABLE}" -m unittest discover -s "${CMAKE_CURRENT_SOURCE_DIR}/tests" -p "test_qualification.py")
 
   add_test(
+    NAME public-installer
+    COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tests/test_public_installer.py")
+
+  add_test(
     NAME mcpb-packaging
     COMMAND "${Python3_EXECUTABLE}" -m unittest discover -s "${CMAKE_CURRENT_SOURCE_DIR}/tests" -p "test_mcpb.py")
 endif()

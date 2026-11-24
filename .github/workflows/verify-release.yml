@@ -36,4 +36,5 @@ jobs:
           cmp "$RUNNER_TEMP/install-antigravity.py" scripts/install-antigravity.py
           python3 -I "$RUNNER_TEMP/install-antigravity.py"
           python3 -I ci/check_installed_plugin.py "$HOME/.gemini/config/plugins/symphony"
+          python3 -I ci/check_antigravity_host.py
           python3 -I "$RUNNER_TEMP/install-antigravity.py"
