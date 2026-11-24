@@ -18,7 +18,12 @@ import zipfile
 VERSION = "0.2.0-beta.2.1"
 RELEASE_URL = f"https://github.com/QuanuX/Antigravity-IPC-MCP-CLI/releases/download/v{VERSION}"
 # SHA-256 of each profile ZIP published alongside this installer.
-ARCHIVES = {}
+ARCHIVES = {
+    "macos15-arm64": "4eab0e757ad4499897f7c09f2409e440e68e110b3b414550676d1ed5c998310a",
+    "ubuntu24.04-amd64": "ebe3028f069260ab0f20cc24aa3bbeafc69ec2a57ff078bc9d10f0a6940a94d9",
+    "ubuntu24.04-arm64": "b1d05fb8862cb2bdeaf182295d7cd170618d028a2797025130de25e0fb663fde",
+    "ubuntu26.04-amd64": "8c53f8607d958abc0615333866586e24dcc769c5d3941e0547ce4653ea78a435"
+}
 
 
 def sha(path):
