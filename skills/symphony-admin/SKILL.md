@@ -12,7 +12,7 @@ Caller class does not grant or remove authority. The MCP server is a transport a
 ## Required Workflow
 
 1. Call `symphony_connection` (or read `symphony://connection`) first to confirm the bound `qxctl_sha256`, `registry_digest`, `registered_commands`, `routable_commands`, and `enabled_nonread_commands`.
-2. In the default **Public Operation-Specific Catalogue Mode** (`--tool-catalog catalog/tools.json`, 698 tools covering 493 routable commands):
+2. In the default **Public Operation-Specific Catalogue Mode** (`--tool-catalog catalog/tools.json`, 744 tools covering 523 routable commands):
    - Use the specific read tool (`symphony_<route>`) for `read_only` commands.
    - Use the specific preview tool (`symphony_<route>_preview`) followed by its matching apply tool (`symphony_<route>_apply`) for any non-read command (`permission_backed_mutation`, `proposal_only`, `evidence_only`).
 3. In **Live Registry Discovery Mode** (when started without `--tool-catalog`, 6 tools):

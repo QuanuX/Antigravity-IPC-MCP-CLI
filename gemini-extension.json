@@ -1,6 +1,6 @@
 {
   "name": "quanux-symphony",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-beta.2.1",
   "description": "QuanuX Symphony C++26 MCP and Unix-socket IPC bridge, VGAA architectural rules, and administration skills for Antigravity, Antigravity CLI (agy), and Gemini CLI.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {

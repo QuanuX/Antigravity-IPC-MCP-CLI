@@ -34,10 +34,10 @@ class PublicTools(unittest.TestCase):
     def test_committed_catalog_covers_routable_commands_with_reviewed_metadata(self):
         committed = json.loads(COMMITTED_CATALOG.read_text(encoding="utf-8"))
         self.assertEqual(committed["schema"], "symphony.public-tool-catalog.v1")
-        self.assertEqual(committed["review_status"], "reviewed_for_public_submission")
+        self.assertEqual(committed["review_status"], "generated_candidate_not_approved")
         self.assertEqual(committed["native_help_unavailable"], [])
         entries = committed["entries"]
-        self.assertEqual(len(entries), 697)
+        self.assertEqual(len(entries), 743)
         names = [e["tool"]["name"] for e in entries]
         self.assertEqual(len(names), len(set(names)))
         self.assertTrue(all(len(n) <= 64 for n in names))
@@ -50,9 +50,9 @@ class PublicTools(unittest.TestCase):
             for field in ("readOnlyHint", "destructiveHint", "openWorldHint"):
                 self.assertIsInstance(tool["annotations"][field], bool)
             by_command.setdefault(binding["command_id"], []).append(binding["kind"])
-        self.assertEqual(len(by_command), 493)
-        self.assertEqual(sum(1 for kinds in by_command.values() if kinds == ["read"]), 289)
-        self.assertEqual(sum(1 for kinds in by_command.values() if sorted(kinds) == ["apply", "preview"]), 204)
+        self.assertEqual(len(by_command), 523)
+        self.assertEqual(sum(1 for kinds in by_command.values() if kinds == ["read"]), 303)
+        self.assertEqual(sum(1 for kinds in by_command.values() if sorted(kinds) == ["apply", "preview"]), 220)
         self.assertEqual(len(committed["excluded_commands"]), 2)
 
     def test_every_operation_exposed_without_generic_executors(self):

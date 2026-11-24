@@ -1,0 +1,26 @@
+{
+  "profiles": {
+    "macos15-arm64": {
+      "catalog_sha256": "049ae9674fc8c5091422fb76a4f62314e0b71cb4d468b82747e043504b6e9269",
+      "observed_registry_digest": "79edcfa24937a7cd1c9bc313d61fd4a40d7b9bf7f5f3126824fd77e173eff2db",
+      "qxctl_sha256": "544308e8b2ee74d9db923fd948b0bfa90994e1ca07c89c9e9d0827d371e6394f"
+    },
+    "ubuntu24.04-amd64": {
+      "catalog_sha256": "76efbc1175f522d785728890453c71388e3943ee229835ac1c80650cdb80c06e",
+      "observed_registry_digest": "ab9fa959c8327db0143fe4a2dd1316ffdb7bb0790d42ad904cb285e06db1feb8",
+      "qxctl_sha256": "7453ea600635233df65fddaef4428d03298199ae1cc82637c6de38266ff42cfd"
+    },
+    "ubuntu24.04-arm64": {
+      "catalog_sha256": "341aa83989c2d7ac60572fc60085f4e5aadfe3e26fc72e5c715e3c7db6beb5de",
+      "observed_registry_digest": "4df440e217d055509e9543132685282ffe2858d779f6bbff19fbf667d38e66bf",
+      "qxctl_sha256": "c3f4870c0e409bd4eca6ee9dd1f3ee42d957989e3173ed776a8eb6dce73fe67b"
+    },
+    "ubuntu26.04-amd64": {
+      "catalog_sha256": "76efbc1175f522d785728890453c71388e3943ee229835ac1c80650cdb80c06e",
+      "observed_registry_digest": "ab9fa959c8327db0143fe4a2dd1316ffdb7bb0790d42ad904cb285e06db1feb8",
+      "qxctl_sha256": "7453ea600635233df65fddaef4428d03298199ae1cc82637c6de38266ff42cfd"
+    }
+  },
+  "signed_release_index_sha256": "sha256:69c89fef8a2ab2eed8e78b56168fcdbbf285989fedf698a43ea499cd2883e9f0",
+  "version": "0.2.0-beta.2.1"
+}

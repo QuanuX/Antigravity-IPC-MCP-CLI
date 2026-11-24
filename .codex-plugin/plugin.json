@@ -1,6 +1,6 @@
 {
   "name": "symphony",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-beta.2.1",
   "description": "QuanuX Symphony MCP and local IPC bridge and operational skills",
   "author": {
     "name": "QuanuX",

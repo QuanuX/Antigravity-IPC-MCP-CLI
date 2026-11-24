@@ -1,7 +1,7 @@
 {
   "name": "symphony",
   "displayName": "Symphony",
-  "version": "0.2.0-alpha.1",
+  "version": "0.2.0-beta.2.1",
   "description": "QuanuX Symphony MCP and local IPC bridge, VGAA rules, and skills for Antigravity and Antigravity CLI",
   "logo": "assets/favicon.svg",
   "suggestedPrompts": [
