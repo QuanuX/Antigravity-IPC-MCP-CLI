@@ -1,8 +1,10 @@
-# MCP Registry & `.mcpb` Packaging
+# Historical MCP Registry and MCPB packaging templates
 
-This repository includes reproducible `.mcpb` bundle creation and MCP Registry [`server.json`](../server.json) metadata generation via [`scripts/package_mcpb.py`](../scripts/package_mcpb.py) and [`packaging/mcpb/manifest.json`](../packaging/mcpb/manifest.json).
+Install the released Symphony Antigravity plugin using the [QuanuX downloads page](https://quanux.org/downloads#antigravity). The [beta.2.1 GitHub release](https://github.com/QuanuX/Antigravity-IPC-MCP-CLI/releases/tag/v0.2.0-beta.2.1) provides the Python installer, platform ZIPs and checksums.
 
-## Building a Deterministic Multi-Architecture `.mcpb` Bundle
+The checked-in [`server.json`](../server.json) and [MCPB manifest](../packaging/mcpb/manifest.json) are historical alpha packaging templates. The alpha URL in the example and its all-zero SHA-256 are placeholders. A publisher generating a separate MCPB record must use the release URL and digest of its actual uploaded bundle.
+
+## Reproducing the historical alpha packaging example
 
 Provide all four native `symphony-mcp` binaries (`darwin-arm64`, `darwin-x86_64`, `linux-x86_64`, `linux-aarch64`) to [`scripts/package_mcpb.py`](../scripts/package_mcpb.py):
 

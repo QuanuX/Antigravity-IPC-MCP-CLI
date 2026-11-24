@@ -33,7 +33,8 @@ This repository provides a **thin, caller-class-neutral local adapter** (`sympho
 | **Same-User Unix-Socket IPC** | `--listen <socket>` runs a local mode-`0600` Unix-domain socket daemon inside a mode-`0700` non-symlink directory with kernel peer-UID verification (`getpeereid` / `SO_PEERCRED`); `--connect-socket <socket>` connects any stdio MCP host to the running daemon |
 | **Always-On VGAA Rules** | [`rules/AGENTS.md`](rules/AGENTS.md) (Antigravity plugin rule) and [`GEMINI.md`](GEMINI.md) (Antigravity CLI / Gemini CLI context file) |
 | **Agent Skills** | [`skills/symphony-admin/SKILL.md`](skills/symphony-admin/SKILL.md), [`skills/symphony-setup/SKILL.md`](skills/symphony-setup/SKILL.md), and [`skills/symphony-ipc/SKILL.md`](skills/symphony-ipc/SKILL.md) |
-| **Host Manifests** | [`plugin.json`](plugin.json) + [`mcp_config.json`](mcp_config.json) (Antigravity & `agy`), [`gemini-extension.json`](gemini-extension.json) (Gemini CLI & `agy plugin import gemini`), [`mcp.json`](mcp.json), [`.mcp.json`](.mcp.json), [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json), [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json), [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json), [`server.json`](server.json), and [`packaging/mcpb/manifest.json`](packaging/mcpb/manifest.json) |
+| **Host Manifests** | [`plugin.json`](plugin.json) + [`mcp_config.json`](mcp_config.json) (Antigravity & `agy`), [`gemini-extension.json`](gemini-extension.json) (Gemini CLI & `agy plugin import gemini`), [`mcp.json`](mcp.json), [`.mcp.json`](.mcp.json), [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json), [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json), and [`.agents/plugins/marketplace.json`](.agents/plugins/marketplace.json) |
+| **Historical MCP Registry packaging templates** | [`server.json`](server.json) and [`packaging/mcpb/manifest.json`](packaging/mcpb/manifest.json) illustrate the alpha MCPB format. The zero digest is a placeholder. The beta installer and verified platform ZIPs are on the [official Antigravity release](https://github.com/QuanuX/Antigravity-IPC-MCP-CLI/releases/tag/v0.2.0-beta.2.1). |
 
 ---
 
@@ -132,7 +133,7 @@ python3 scripts/configure_clients.py \
 - [Codex & Multi-Host Acceptance Guide (`docs/codex-acceptance.md`)](docs/codex-acceptance.md)
 - [Security Boundary & IPC Invariants (`docs/security.md`)](docs/security.md)
 - [Migration from `QuanuX/quanux-gemini-cli-mcp` (`docs/repository-migration.md`)](docs/repository-migration.md)
-- [MCP Registry & `.mcpb` Packaging (`docs/mcp-registry.md`)](docs/mcp-registry.md)
+- [Historical MCP Registry and MCPB packaging examples](docs/mcp-registry.md)
 - [Verification & Qualification Suite (`docs/verification.md`)](docs/verification.md)
 - [Directory Submission Guide (`docs/submission.md`)](docs/submission.md)
 - [Supported Platforms (`docs/platforms.md`)](docs/platforms.md)
